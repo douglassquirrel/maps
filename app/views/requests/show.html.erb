@@ -1,0 +1,23 @@
+<p>
+  <b>Latitude:</b>
+  <%=h @request.latitude %>
+</p>
+
+<p>
+  <b>Longitude:</b>
+  <%=h @request.longitude %>
+</p>
+
+<p>
+  <b>Map content type:</b>
+  <%=h @request.map_content_type %>
+</p>
+
+<p>
+  <b>Map data:</b>
+  <%=h @request.map_data %>
+</p>
+
+
+<%= link_to 'Edit', edit_request_path(@request) %> |
+<%= link_to 'Back', requests_path %>

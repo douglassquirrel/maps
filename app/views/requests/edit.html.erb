@@ -1,0 +1,28 @@
+<h1>Editing request</h1>
+
+<% form_for(@request) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :latitude %><br />
+    <%= f.text_field :latitude %>
+  </p>
+  <p>
+    <%= f.label :longitude %><br />
+    <%= f.text_field :longitude %>
+  </p>
+  <p>
+    <%= f.label :map_content_type %><br />
+    <%= f.text_field :map_content_type %>
+  </p>
+  <p>
+    <%= f.label :map_data %><br />
+    <%= f.text_field :map_data %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @request %> |
+<%= link_to 'Back', requests_path %>
