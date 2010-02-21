@@ -37,8 +37,8 @@ class RequestsController < ApplicationController
     @request = Request.find(params[:id])
   end
 
-  # GET /requests/1/image
-  def image
+  # GET /requests/1/map
+  def map
     @request = Request.find(params[:id])
     send_data (@request.map_data, :type => @request.map_content_type, 
                                   :disposition => 'inline')

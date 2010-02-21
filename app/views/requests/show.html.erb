@@ -1,4 +1,15 @@
 <p>
+  <% if @request.map_data && !@request.map_data.empty? %>
+    <img style="height:50%; width:50%" 
+         src="<%=h map_request_path(@request) %>" 
+         alt="Map uploaded in response to this request"
+         onclick="location.href = '<%= map_request_path(@request) %>'" />
+<% else %>
+  No map uploaded yet
+<% end %>
+</p>
+  
+<p>
   <b>Latitude:</b>
   <%=h @request.latitude %>
 </p>
@@ -7,17 +18,6 @@
   <b>Longitude:</b>
   <%=h @request.longitude %>
 </p>
-
-<p>
-  <b>Map content type:</b>
-  <%=h @request.map_content_type %>
-</p>
-
-<p>
-  <b>Map data:</b>
-  <%=h @request.map_data %>
-</p>
-
 
 <%= link_to 'Edit', edit_request_path(@request) %> |
 <%= link_to 'Back', requests_path %>

@@ -12,12 +12,8 @@
     <%= f.text_field :longitude %>
   </p>
   <p>
-    <%= f.label :map_content_type %><br />
-    <%= f.text_field :map_content_type %>
-  </p>
-  <p>
-    <%= f.label :map_data %><br />
-    <%= f.text_field :map_data %>
+    <%= f.label :map_file %><br />
+    <%= f.file_field :map_file %>
   </p>
   <p>
     <%= f.submit 'Update' %>
