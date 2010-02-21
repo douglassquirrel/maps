@@ -48,9 +48,14 @@ class RequestsController < ApplicationController
   # POST /requests.xml
   def create
     @request = Request.new(params[:request])
+    success = @request.save
+    if success then
+      @task = Task.new(:type_id => 5, :description => "Find a satellite map for a rescue team", :url => edit_request_url(@request))
+      success = @task.save
+    end
 
     respond_to do |format|
-      if @request.save
+      if success
         flash[:notice] = 'Request was successfully created.'
         format.html { redirect_to(@request) }
         format.xml  { render :xml => @request, :status => :created, :location => @request }
