@@ -14,7 +14,7 @@ xml.vxml "xmlns" => "http://www.w3.org/2001/vxml", "version" => "2.0" do
       add_prompt(xml, "Please enter latitude. Use star for decimal point. Press hash when done.")
     end
     xml.field "name"=>"longitude", "type"=>"number" do
-      add_prompt(xml, "Please enter latitude. Use star for decimal point. Press hash when done.")
+      add_prompt(xml, "Please enter longitude. Use star for decimal point. Press hash when done.")
     end
 
     xml.filled do
