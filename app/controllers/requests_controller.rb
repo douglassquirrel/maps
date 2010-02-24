@@ -28,6 +28,7 @@ class RequestsController < ApplicationController
 
     respond_to do |format|
       format.html # new.html.erb
+      format.voicexml # new.voicexml.rxml
       format.xml  { render :xml => @request }
     end
   end
@@ -48,6 +49,9 @@ class RequestsController < ApplicationController
   # POST /requests.xml
   def create
     @request = Request.new(params[:request])
+    if params[:latitude]  then @task[:latitude]  = params[:latitude]  end
+    if params[:longitude] then @task[:longitude] = params[:longitude] end
+
     success = @request.save
     if success then
       @task = Task.new(:type_id => 5, :description => "Find a satellite map for a rescue team", :url => edit_request_url(@request))
