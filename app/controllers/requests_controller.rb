@@ -49,8 +49,8 @@ class RequestsController < ApplicationController
   # POST /requests.xml
   def create
     @request = Request.new(params[:request])
-    if params[:latitude]  then @task[:latitude]  = params[:latitude]  end
-    if params[:longitude] then @task[:longitude] = params[:longitude] end
+    if params[:latitude]  then @request[:latitude]  = params[:latitude]  end
+    if params[:longitude] then @request[:longitude] = params[:longitude] end
 
     success = @request.save
     if success then
